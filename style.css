@@ -1,0 +1,177 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+    transition: 0.3s ease;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+/* NAV */
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* CONTACT */
+#contact {
+    padding: 40px;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+}
+
+#contact form {
+    max-width: 500px;
+    margin: auto;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact textarea {
+    height: 120px;
+    resize: none;
+}
+
+#contact button {
+    padding: 12px 20px;
+    cursor: pointer;
+    border: none;
+    background: #222;
+    color: white;
+    border-radius: 5px;
+}
+
+#formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* DARK MODE BUTTON */
+#themeToggle {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#themeToggle:hover {
+    opacity: 0.8;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+/* DARK MODE */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #000;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode button {
+    background-color: #555;
+    color: white;
+}
+
+/* FOCUS IMPROVEMENT */
+.dark-mode input:focus,
+.dark-mode textarea:focus {
+    outline: 2px solid #888;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* LOADING SPINNER */
+.spinner {
+    font-weight: bold;
+}

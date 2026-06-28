@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VertexMind Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Dark Mode Button -->
+    <button id="themeToggle">🌙 Dark Mode</button>
+
+    <!-- Header -->
+    <header>
+        <h1>VertexMind</h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Learn Frontend Development</h2>
+        <p>Build responsive websites using HTML, CSS, and JavaScript.</p>
+
+        <button>Get Started</button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+
+        <div class="card">
+            <h3>Responsive</h3>
+            <p>Works on all devices.</p>
+        </div>
+
+        <div class="card">
+            <h3>Modern Design</h3>
+            <p>Clean and attractive UI.</p>
+        </div>
+
+        <div class="card">
+            <h3>Fast</h3>
+            <p>Lightweight and simple.</p>
+        </div>
+
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <form id="contactForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email">
+
+            <textarea
+                id="message"
+                placeholder="Your message"></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+            <p id="formMessage"></p>
+
+        </form>
+
+    </section>
+
+    <!-- API Fetch Section -->
+    <section id="posts">
+
+        <h2>Latest Post</h2>
+
+        <button id="loadData">
+            Load Data
+        </button>
+
+        <div id="loading"></div>
+
+        <div id="apiData"></div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>©️ 2026 VertexMind</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
