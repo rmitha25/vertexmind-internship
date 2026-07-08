@@ -34,3 +34,7 @@ https://your-vercel-link.vercel.app
 ## GitHub Repository
 
 https://github.com/yourusername/project
+
+## Screenshot
+
+![Portfolio Screenshot](./screenshot/Image.png)
