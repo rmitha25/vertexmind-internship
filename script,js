@@ -1,37 +1,39 @@
 // ======================
+// Check if JavaScript is loaded
+// ======================
+console.log("JavaScript Loaded");
+
+// ======================
 // FORM VALIDATION
 // ======================
 
 const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", function (event) {
+if (form) {
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const formMessage = document.getElementById("formMessage");
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+        if (name === "" || email === "" || message === "") {
+            formMessage.textContent = "Please fill all fields!";
+            formMessage.style.color = "red";
+            return;
+        }
 
-    const formMessage = document.getElementById("formMessage");
+        if (!email.includes("@")) {
+            formMessage.textContent = "Please enter a valid email!";
+            formMessage.style.color = "red";
+            return;
+        }
 
-    if (name === "" || email === "" || message === "") {
-
-        formMessage.textContent = "Please fill all fields";
-        formMessage.style.color = "red";
-        return;
-    }
-
-    if (!email.includes("@")) {
-
-        formMessage.textContent = "Please enter a valid email";
-        formMessage.style.color = "red";
-        return;
-    }
-
-    formMessage.textContent = "Form submitted successfully!";
-    formMessage.style.color = "green";
-});
-
+        formMessage.textContent = "Form submitted successfully!";
+        formMessage.style.color = "green";
+    });
+}
 
 // ======================
 // DARK MODE
@@ -39,22 +41,27 @@ form.addEventListener("submit", function (event) {
 
 const themeToggle = document.getElementById("themeToggle");
 
-themeToggle.addEventListener("click", () => {
+if (themeToggle) {
 
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggle.innerHTML = "☀️ Light Mode";
     }
-});
 
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
+    themeToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            themeToggle.innerHTML = "☀️ Light Mode";
+            localStorage.setItem("theme", "dark");
+        } else {
+            themeToggle.innerHTML = "🌙 Dark Mode";
+            localStorage.setItem("theme", "light");
+        }
+    });
 }
-
 
 // ======================
 // FETCH API
@@ -62,46 +69,36 @@ if (localStorage.getItem("theme") === "dark") {
 
 const loadData = document.getElementById("loadData");
 
-loadData.addEventListener("click", () => {
+if (loadData) {
 
-    const loading = document.getElementById("loading");
-    const apiData = document.getElementById("apiData");
+    loadData.addEventListener("click", function () {
 
-    // Show loading spinner
-    loading.innerHTML = "<p class='spinner'>Loading...</p>";
-    apiData.innerHTML = "";
+        const loading = document.getElementById("loading");
+        const apiData = document.getElementById("apiData");
 
-    fetch("https://jsonplaceholder.typicode.com/posts/1")
+        loading.innerHTML = "<p class='spinner'>Loading...</p>";
+        apiData.innerHTML = "";
 
-        .then(response => {
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+            .then(response => response.json())
+            .then(data => {
 
-            if (!response.ok) {
-                throw new Error("Failed to fetch data");
-            }
+                loading.innerHTML = "";
 
-            return response.json();
-        })
+                apiData.innerHTML = `
+                    <h3>${data.title}</h3>
+                    <p>${data.body}</p>
+                `;
+            })
+            .catch(error => {
 
-        .then(data => {
+                loading.innerHTML = "";
 
-            loading.textContent = "";
+                apiData.innerHTML = "<p style='color:red;'>Failed to load data.</p>";
 
-            apiData.innerHTML = `
-                <h3>${data.title}</h3>
-                <p>${data.body}</p>
-            `;
-        })
+                console.log(error);
+            });
 
-        .catch(error => {
+    });
 
-            loading.textContent = "";
-
-            apiData.innerHTML = `
-                <p style="color:red;">
-                    Failed to load data.
-                </p>
-            `;
-
-            console.error(error);
-        });
-});
+}
