@@ -35,6 +35,10 @@ https://your-vercel-link.vercel.app
 
 https://github.com/yourusername/project
 
-## Screenshot
+## Screenshots
 
-![Portfolio Screenshot](./screenshot/Image.png)
+### Screenshot 1
+![Screenshot 1](./screenshot/sc.png)
+
+### Screenshot 2
+![Screenshot 2](./screenshot/sc2.png)
