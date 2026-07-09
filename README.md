@@ -29,11 +29,11 @@ npm run dev
 
 ## Live Demo
 
-https://your-vercel-link.vercel.app
+https://vertexmind-internship.vercel.app
 
 ## GitHub Repository
 
-https://github.com/yourusername/project
+https://github.com/rmitha25/vertexmind-internship
 
 ## Screenshots
 
@@ -42,3 +42,6 @@ https://github.com/yourusername/project
 
 ### Screenshot 2
 ![Screenshot 2](./screenshot/sc2.png)
+## GitHub Repository
+
+https://github.com/rmitha25/vertexmind-internship
